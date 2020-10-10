@@ -1,0 +1,22 @@
+{
+  "name": "upload-s3-artifact",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Upload a single artifact to S3 and return its object version ID",
+  "main": "dist/index.js",
+  "author": "Noam Liran",
+  "license": "Apache2.0",
+  "scripts": {
+    "package": "ncc build src/index.ts -o dist --source-map --license LICENSE"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "aws-sdk": "^2.641.0",
+    "mime-types": "^2.1.26"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.8",
+    "@vercel/ncc": "^0.24.0",
+    "typescript": "^3.6.4"
+  }
+}

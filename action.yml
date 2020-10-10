@@ -1,0 +1,32 @@
+name: Upload artifact to S3
+description: 'Upload a single artifact to S3 and return its object version ID'
+author: 'Noam Liran'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'orange'
+
+inputs:
+  aws_access_key_id:
+    description: 'AWS access key ID'
+    required: true
+  aws_secret_access_key:
+    description: 'AWS secret access key'
+    required: true
+  aws_bucket:
+    description: 'S3 bucket name'
+    required: true
+  source_path:
+    required: true
+    description: 'File to upload'
+  destination_path:
+    required: true
+    description: 'S3 upload target path'
+
+outputs:
+  objectVersion:
+    description: 'Object version'
+    
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
